@@ -5,16 +5,25 @@ class luna {
     protected $front;
     protected $front_path;
     protected $front_args;
+    protected $render_args;
 
     public function __construct() {
         // cons
     }
 
-    public function render() {
-        
+    public function render($return = true) {
+        foreach ($this->front_args as $key => $value) {
+            $this->front = str_replace('{'.$value.'}', $this->render_args[trim($this->front_args[$key])], $this->front);
+        }
+        if ($return)
+            return $this->front;
+
+        echo $this->front;
     }
 
     public function with($args) {
+        $this->front_args = $this->get_between($this->front, '{', '}');
+        $this->render_args = $args;
         return $this;
     }
 
