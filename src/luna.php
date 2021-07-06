@@ -37,5 +37,15 @@ class luna {
      */
     private function set_front($front) {
         $this->front_path = $front;
+        $handle = fopen($this->front_path, "r");
+
+        if (!is_resource($handle))
+            throw new Exception("There is no such file in {$this->front_path}", 1);
+            
+        $this->front = fread($handle, filesize($this->front_path));
+
+        fclose($handle);
+        
+        return true;
     }
 }
