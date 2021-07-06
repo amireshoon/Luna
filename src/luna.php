@@ -13,6 +13,10 @@ class luna {
 
     public function render($return = true) {
         foreach ($this->front_args as $key => $value) {
+            
+            if (empty($value) || !key_exists(trim($value), $this->render_args))
+                continue;
+
             $this->front = str_replace('{'.$value.'}', $this->render_args[trim($this->front_args[$key])], $this->front);
         }
         if ($return)
