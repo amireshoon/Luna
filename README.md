@@ -2,7 +2,10 @@
 Luna is a simple very light class to render HTML pages or views in PHP
 
 # Instalation
-You should know how to install luna right?
+You can install via composer or direclty copy the class or clone repo.
+```bash
+composer require amireshoon/luna
+```
 
 ## Content format
 You can render HTML pages or view or any context of any kind of file. You just have to include your keyword like this:
