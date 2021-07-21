@@ -4,7 +4,7 @@
     "description": "Luna is a simple very light class to render HTML pages or views or any file in PHP",
     "keywords": ["luna","html render"],
     "homepage": "https://github.com/amireshoon/Luna",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Amirhossein Meydani",
